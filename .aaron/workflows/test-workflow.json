@@ -1,0 +1,12 @@
+{
+  "name": "test-workflow",
+  "description": "A test workflow for workspace integration testing",
+  "goal": "Verify that project workflows are correctly loaded from .aaron/workflows/",
+  "steps": [
+    {
+      "id": "step1",
+      "prompt": "Verify the test workflow was loaded correctly from the .aaron/ directory.",
+      "verify": "Check that the workflow manifest exists at /project-workflows/test-workflow.json"
+    }
+  ]
+}
