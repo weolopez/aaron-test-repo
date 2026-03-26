@@ -43,7 +43,7 @@ export class RetryEngine {
    */
   async execute(fn, maxRetries, onRetry) {
     let lastError;
-    for (let attempt = 0; attempt < maxRetries; attempt++) {
+    for (let attempt = 0; attempt <= maxRetries; attempt++) {
       try {
         return await fn(attempt);
       } catch (err) {
