@@ -68,7 +68,7 @@ export class Notification {
   }
 
   get isCritical() {
-    return this.type === 'URGENT';
+    return this.type === NotificationType.CRITICAL;
   }
 
   get isFullyDelivered() {
