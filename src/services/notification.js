@@ -1,5 +1,5 @@
 /**
- * notification.js — NotificationManager and RetryEngine
+ * notification.js â NotificationManager and RetryEngine
  *
  * Implements ADR-001: priority-queue-based notification dispatcher
  * with exponential backoff retry, rate limiting, and graceful degradation.
@@ -10,9 +10,9 @@
 import { NotificationType, Channel, TYPE_CHANNELS, TYPE_MAX_RETRIES } from '../models/notification.js';
 import { RETRY_CONFIG, RATE_LIMIT_CONFIG } from '../config/notification-config.js';
 
-// ════════════════════════════════════════════════════
+// ââââââââââââââââââââââââââââââââââââââââââââââââââââ
 // RETRY ENGINE
-// ════════════════════════════════════════════════════
+// ââââââââââââââââââââââââââââââââââââââââââââââââââââ
 
 export class RetryEngine {
   constructor(config = RETRY_CONFIG) {
@@ -59,9 +59,9 @@ export class RetryEngine {
   }
 }
 
-// ════════════════════════════════════════════════════
+// ââââââââââââââââââââââââââââââââââââââââââââââââââââ
 // RATE LIMITER (sliding window)
-// ════════════════════════════════════════════════════
+// ââââââââââââââââââââââââââââââââââââââââââââââââââââ
 
 export class RateLimiter {
   constructor(config = RATE_LIMIT_CONFIG) {
@@ -131,9 +131,9 @@ export class RateLimiter {
   }
 }
 
-// ════════════════════════════════════════════════════
+// ââââââââââââââââââââââââââââââââââââââââââââââââââââ
 // NOTIFICATION MANAGER
-// ════════════════════════════════════════════════════
+// ââââââââââââââââââââââââââââââââââââââââââââââââââââ
 
 export class NotificationManager {
   constructor({ channels = {}, retryEngine, rateLimiter, log } = {}) {
