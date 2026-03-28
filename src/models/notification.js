@@ -1,12 +1,12 @@
 /**
- * notification.js — Notification models and types
+ * notification.js â Notification models and types
  *
  * Pure JS, zero dependencies. Works in Node 18+ and modern browsers.
  */
 
-// ════════════════════════════════════════════════════
+// ââââââââââââââââââââââââââââââââââââââââââââââââââââ
 // ENUMS
-// ════════════════════════════════════════════════════
+// ââââââââââââââââââââââââââââââââââââââââââââââââââââ
 
 export const NotificationType = Object.freeze({
   CRITICAL: 'CRITICAL',
@@ -21,7 +21,7 @@ export const Channel = Object.freeze({
   SMS:    'SMS',
 });
 
-/** Channels per notification type (from requirements §2.1) */
+/** Channels per notification type (from requirements Â§2.1) */
 export const TYPE_CHANNELS = Object.freeze({
   [NotificationType.CRITICAL]: [Channel.IN_APP, Channel.EMAIL, Channel.SMS],
   [NotificationType.HIGH]:     [Channel.IN_APP, Channel.EMAIL],
@@ -37,9 +37,9 @@ export const TYPE_MAX_RETRIES = Object.freeze({
   [NotificationType.LOW]:      1,
 });
 
-// ════════════════════════════════════════════════════
+// ââââââââââââââââââââââââââââââââââââââââââââââââââââ
 // NOTIFICATION CLASS
-// ════════════════════════════════════════════════════
+// ââââââââââââââââââââââââââââââââââââââââââââââââââââ
 
 let counter = 0;
 
@@ -68,11 +68,11 @@ export class Notification {
   }
 
   get isCritical() {
-    return this.type === NotificationType.CRITICAL;
+    return this?.type === NotificationType.CRITICAL;
   }
 
   get isFullyDelivered() {
-    return this.channels.every(ch => this.delivered.has(ch));
+    return this?.channels.every(ch => this.delivered.has(ch));
   }
 
   markDelivered(channel) {
